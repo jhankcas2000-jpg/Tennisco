@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<!--
+  ================================================================
+  ARCHIVO  : pedido.html - formulario para hacer un pedido
+  PROYECTO : TENNISCO - Fundamentos Web - UNIAJC
+  TEMAS    : fieldset, legend, select con optgroup, datalist,
+             input (text, tel, email, number, date, hidden),
+             radio, checkbox multiple, textarea, validacion HTML5
+             (required, pattern, min, max, minlength, maxlength).
+  NOTA     : solo HTML. Los datos se envian a gracias.html con GET.
+  ================================================================
+-->
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Haz tu pedido de zapatillas en TENNISCO.">
+  <title>Hacer pedido | TENNISCO</title>
+  <link rel="icon" href="img/logo.png" type="image/png">
+</head>
+
+<body>
+
+  <!-- ======================= ENCABEZADO ======================= -->
+  <header>
+    <a href="index.html">
+      <img src="img/logo.png" alt="TENNISCO - Ir al inicio"
+           width="100" height="100">
+    </a>
+    <h1>Hacer pedido</h1>
+
+    <nav>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="nike.html">Nike</a></li>
+        <li><a href="adidas.html">Adidas</a></li>
+        <li><a href="new-balance.html">New Balance</a></li>
+        <li><a href="puma.html">Puma</a></li>
+        <li><a href="reebok.html">Reebok</a></li>
+        <li><a href="quienes-somos.html">Quienes somos</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="pedido.html">Hacer pedido</a></li>
+        <li><a href="registro.html">Registro</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ==================== CONTENIDO PRINCIPAL ==================== -->
+  <main>
+    <h2>Pide tus zapatillas</h2>
+    <p>Completa el formulario y te confirmaremos disponibilidad y
+       precio por WhatsApp. Los campos marcados con * son obligatorios.</p>
+
+    <form action="gracias.html" method="get">
+
+      <!-- hidden: dato invisible que indica desde que formulario llego -->
+      <input type="hidden" name="formulario" value="pedido">
+
+      <!-- ===================================================== -->
+      <!-- GRUPO 1: datos del cliente                             -->
+      <!-- ===================================================== -->
+      <fieldset>
+        <legend>1. Tus datos</legend>
+
+        <p>
+          <label for="nombre">Nombre completo *</label><br>
+          <input type="text" id="nombre" name="nombre" required
+                 minlength="3" maxlength="60" autocomplete="name">
+        </p>
+
+        <!-- inputmode="numeric": en el celular muestra teclado numerico -->
+        <p>
+          <label for="cedula">Cedula * (solo numeros, sin puntos)</label><br>
+          <input type="text" id="cedula" name="cedula" required
+                 pattern="[0-9]{6,10}"
+                 title="Entre 6 y 10 digitos, sin puntos"
+                 inputmode="numeric">
+        </p>
+
+        <p>
+          <label for="celular">Celular *</label><br>
+          <input type="tel" id="celular" name="celular" required
+                 pattern="3[0-9]{9}"
+                 title="10 digitos que empiecen por 3. Ej: 3001234567"
+                 autocomplete="tel" placeholder="3001234567">
+        </p>
+
+        <p>
+          <label for="correo">Correo electronico *</label><br>
+          <input type="email" id="correo" name="correo" required
+                 autocomplete="email">
+        </p>
+      </fieldset>
+
+      <!-- ===================================================== -->
+      <!-- GRUPO 2: datos del producto                            -->
+      <!-- ===================================================== -->
+      <fieldset>
+        <legend>2. Producto que deseas</legend>
+
+        <!-- select con optgroup: opciones agrupadas por marca -->
+        <p>
+          <label for="modelo">Modelo de zapatilla *</label><br>
+          <select id="modelo" name="modelo" required>
+            <option value="">-- Elige un modelo --</option>
+            <optgroup label="Nike">
+              <option value="air-force-1">Air Force 1 Low ($380.000)</option>
+              <option value="dunk-low">Dunk Low ($450.000)</option>
+              <option value="air-max-90">Air Max 90 ($520.000)</option>
+              <option value="air-max-97">Air Max 97 ($550.000)</option>
+            </optgroup>
+            <optgroup label="Adidas">
+              <option value="samba-og">Samba OG ($420.000)</option>
+              <option value="gazelle">Gazelle ($390.000)</option>
+              <option value="superstar">Superstar ($350.000)</option>
+              <option value="campus-00s">Campus 00s ($430.000)</option>
+            </optgroup>
+            <optgroup label="New Balance">
+              <option value="nb-550">550 ($480.000)</option>
+              <option value="nb-574">574 Classic ($420.000)</option>
+              <option value="nb-2002r">2002R ($560.000)</option>
+              <option value="nb-530">530 ($450.000)</option>
+            </optgroup>
+            <optgroup label="Puma">
+              <option value="suede-classic">Suede Classic ($320.000)</option>
+              <option value="rs-x">RS-X ($450.000)</option>
+              <option value="cali-star">Cali Star ($380.000)</option>
+              <option value="palermo">Palermo ($360.000)</option>
+            </optgroup>
+            <optgroup label="Reebok">
+              <option value="classic-leather">Classic Leather ($340.000)</option>
+              <option value="club-c-85">Club C 85 ($360.000)</option>
+              <option value="nano-x3">Nano X3 ($480.000)</option>
+              <option value="royal-complete">Royal Complete ($290.000)</option>
+            </optgroup>
+          </select>
+        </p>
+
+        <!-- datalist: sugiere tallas, pero se puede escribir otra -->
+        <p>
+          <label for="talla">Talla *</label><br>
+          <input type="text" id="talla" name="talla" required
+                 list="lista-tallas" placeholder="Ej: 42">
+          <datalist id="lista-tallas">
+            <option value="36"></option>
+            <option value="37"></option>
+            <option value="38"></option>
+            <option value="39"></option>
+            <option value="40"></option>
+            <option value="41"></option>
+            <option value="42"></option>
+            <option value="43"></option>
+            <option value="44"></option>
+            <option value="45"></option>
+          </datalist>
+        </p>
+
+        <!-- number con min y max -->
+        <p>
+          <label for="cantidad">Cantidad * (de 1 a 20 pares)</label><br>
+          <input type="number" id="cantidad" name="cantidad" required
+                 min="1" max="20" step="1" value="1">
+        </p>
+
+        <!-- Grupo de radio: color preferido -->
+        <fieldset>
+          <legend>Color preferido *</legend>
+          <input type="radio" id="negro" name="color"
+                 value="negro" required>
+          <label for="negro">Negro</label>
+
+          <input type="radio" id="blanco" name="color" value="blanco">
+          <label for="blanco">Blanco</label>
+
+          <input type="radio" id="gris" name="color" value="gris">
+          <label for="gris">Gris</label>
+
+          <input type="radio" id="otro-color" name="color" value="otro">
+          <label for="otro-color">Otro (especificar en observaciones)</label>
+        </fieldset>
+      </fieldset>
+
+      <!-- ===================================================== -->
+      <!-- GRUPO 3: envio y pago                                  -->
+      <!-- ===================================================== -->
+      <fieldset>
+        <legend>3. Envio y pago</legend>
+
+        <p>
+          <label for="direccion">Direccion de envio *</label><br>
+          <input type="text" id="direccion" name="direccion" required
+                 maxlength="100"
+                 placeholder="Ej: Calle 5 #23-45, barrio San Fernando">
+        </p>
+
+        <p>
+          <label for="ciudad-envio">Ciudad *</label><br>
+          <input type="text" id="ciudad-envio" name="ciudad_envio"
+                 required placeholder="Ej: Cali">
+        </p>
+
+        <!-- select: metodo de pago -->
+        <p>
+          <label for="pago">Metodo de pago *</label><br>
+          <select id="pago" name="pago" required>
+            <option value="">-- Elige metodo de pago --</option>
+            <option value="nequi">Nequi</option>
+            <option value="daviplata">Daviplata</option>
+            <option value="bancolombia">Transferencia Bancolombia</option>
+            <option value="efectivo">Efectivo (contra entrega en Cali)</option>
+            <option value="efecty">Efecty</option>
+            <option value="tarjeta">Tarjeta de credito o debito</option>
+          </select>
+        </p>
+
+        <!-- checkbox: servicios adicionales -->
+        <p>Servicios adicionales:</p>
+        <p>
+          <input type="checkbox" id="regalo" name="adicional"
+                 value="empaque-regalo">
+          <label for="regalo">Empaque para regalo</label><br>
+
+          <input type="checkbox" id="urgente" name="adicional"
+                 value="envio-urgente">
+          <label for="urgente">Envio urgente (1-2 dias habiles)</label>
+        </p>
+      </fieldset>
+
+      <!-- ===================================================== -->
+      <!-- GRUPO 4: observaciones                                 -->
+      <!-- ===================================================== -->
+      <fieldset>
+        <legend>4. Observaciones</legend>
+        <p>
+          <label for="observaciones">Algo mas que debamos saber?
+            (color especifico, segunda opcion de talla, etc.)</label><br>
+          <textarea id="observaciones" name="observaciones"
+                    rows="4" cols="45" maxlength="300"></textarea>
+        </p>
+      </fieldset>
+
+      <!-- checkbox required: aceptar terminos -->
+      <p>
+        <input type="checkbox" id="acepto" name="acepto"
+               value="si" required>
+        <label for="acepto">Acepto las condiciones de compra y el
+          tratamiento de mis datos personales *</label>
+      </p>
+
+      <p>
+        <button type="submit">Enviar pedido</button>
+        <button type="reset">Limpiar formulario</button>
+      </p>
+    </form>
+  </main>
+
+  <!-- ======================= PIE DE PAGINA ======================= -->
+  <footer>
+    <p><a href="index.html">Volver al inicio</a></p>
+    <p><small>&copy; 2026 TENNISCO. Todos los derechos reservados.</small></p>
+    <p><small>Proyecto academico de Fundamentos Web - UNIAJC.</small></p>
+  </footer>
+
+</body>
+</html>

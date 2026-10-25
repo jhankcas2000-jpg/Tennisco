@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<!--
+  ARCHIVO  : gracias.html - recibe los datos de contacto.html y pedido.html
+  PROYECTO : TENNISCO - Fundamentos Web - UNIAJC
+  NOTA     : sin un servidor (backend) esta pagina no puede guardar ni
+             leer los datos. Sirve para ver que el envio funciona:
+             los datos aparecen en la barra de direcciones (metodo GET).
+-->
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gracias | TENNISCO</title>
+  <link rel="icon" href="img/logo.png" type="image/png">
+</head>
+
+<body>
+
+  <!-- ======================= ENCABEZADO ======================= -->
+  <header>
+    <a href="index.html">
+      <img src="img/logo.png" alt="TENNISCO - Ir al inicio"
+           width="100" height="100">
+    </a>
+    <h1>TENNISCO</h1>
+
+    <nav>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="nike.html">Nike</a></li>
+        <li><a href="adidas.html">Adidas</a></li>
+        <li><a href="new-balance.html">New Balance</a></li>
+        <li><a href="puma.html">Puma</a></li>
+        <li><a href="reebok.html">Reebok</a></li>
+        <li><a href="quienes-somos.html">Quienes somos</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="pedido.html">Hacer pedido</a></li>
+        <li><a href="registro.html">Registro</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ==================== CONTENIDO PRINCIPAL ==================== -->
+  <main>
+    <h2>Gracias! Recibimos tu informacion</h2>
+
+    <p>Nos pondremos en contacto contigo por WhatsApp o correo
+       en menos de 24 horas para confirmar tu solicitud.</p>
+
+    <section>
+      <h3>Donde estan los datos que enviaste?</h3>
+      <p>Mira la barra de direcciones del navegador. Despues del signo
+         <code>?</code> aparecen todos los datos del formulario, con la
+         forma <code>name=valor</code> y separados por
+         <code>&amp;</code>.</p>
+      <p>Por ejemplo:<br>
+         <code>gracias.html?nombre=Juan&amp;correo=juan%40correo.com</code></p>
+      <p>En un sitio real, un <strong>servidor</strong> recibiria esos
+         datos para guardarlos en una base de datos o enviar un correo
+         de confirmacion.</p>
+    </section>
+
+    <hr>
+
+    <p>
+      <a href="contacto.html">Enviar otro mensaje</a> |
+      <a href="pedido.html">Hacer otro pedido</a> |
+      <a href="index.html">Volver al inicio</a>
+    </p>
+  </main>
+
+  <!-- ======================= PIE DE PAGINA ======================= -->
+  <footer>
+    <p><small>&copy; 2026 TENNISCO. Todos los derechos reservados.</small></p>
+    <p><small>Proyecto academico de Fundamentos Web - UNIAJC.</small></p>
+  </footer>
+
+</body>
+</html>

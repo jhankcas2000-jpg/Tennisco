@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<!--
+  ================================================================
+  ARCHIVO  : registro.html - formulario de registro de cliente
+  PROYECTO : TENNISCO - Fundamentos Web - UNIAJC
+  TEMAS    : fieldset, legend, label, input (text, email, tel,
+             password, date, search), select, radio, checkbox,
+             datalist, textarea, validacion HTML5.
+  NOTA     : solo HTML. Los datos se envian a gracias.html con GET.
+  ================================================================
+-->
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Registrate en TENNISCO y recibe ofertas exclusivas.">
+  <title>Registro | TENNISCO</title>
+  <link rel="icon" href="img/logo.png" type="image/png">
+</head>
+
+<body>
+
+  <!-- ======================= ENCABEZADO ======================= -->
+  <header>
+    <a href="index.html">
+      <img src="img/logo.png" alt="TENNISCO - Ir al inicio"
+           width="100" height="100">
+    </a>
+    <h1>Registro de cliente</h1>
+
+    <nav>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="nike.html">Nike</a></li>
+        <li><a href="adidas.html">Adidas</a></li>
+        <li><a href="new-balance.html">New Balance</a></li>
+        <li><a href="puma.html">Puma</a></li>
+        <li><a href="reebok.html">Reebok</a></li>
+        <li><a href="quienes-somos.html">Quienes somos</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="pedido.html">Hacer pedido</a></li>
+        <li><a href="registro.html">Registro</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ==================== CONTENIDO PRINCIPAL ==================== -->
+  <main>
+    <h2>Crea tu cuenta en TENNISCO</h2>
+    <p>Registrate para recibir ofertas exclusivas, acumular puntos
+       y hacer tus pedidos mas rapido. Los campos marcados con *
+       son obligatorios.</p>
+
+    <form action="gracias.html" method="get">
+
+      <!-- hidden: identifica el formulario -->
+      <input type="hidden" name="formulario" value="registro">
+
+      <!-- ===================================================== -->
+      <!-- GRUPO 1: datos personales                              -->
+      <!-- ===================================================== -->
+      <fieldset>
+        <legend>1. Datos personales</legend>
+
+        <p>
+          <label for="nombre">Nombre completo *</label><br>
+          <input type="text" id="nombre" name="nombre" required
+                 minlength="3" maxlength="60" autocomplete="name"
+                 placeholder="Ej: Maria Lopez">
+        </p>
+
+        <p>
+          <label for="correo">Correo electronico *</label><br>
+          <input type="email" id="correo" name="correo" required
+                 autocomplete="email" placeholder="nombre@correo.com">
+        </p>
+
+        <p>
+          <label for="celular">Celular *</label><br>
+          <input type="tel" id="celular" name="celular" required
+                 pattern="3[0-9]{9}"
+                 title="10 digitos que empiecen por 3. Ej: 3001234567"
+                 autocomplete="tel" placeholder="3001234567">
+        </p>
+
+        <!-- INPUT TYPE="DATE": fecha de nacimiento -->
+        <p>
+          <label for="nacimiento">Fecha de nacimiento *</label><br>
+          <input type="date" id="nacimiento" name="nacimiento" required
+                 min="1940-01-01" max="2012-12-31"
+                 title="Debes ser mayor de 14 anos">
+        </p>
+
+        <!-- Grupo de radio: genero -->
+        <fieldset>
+          <legend>Genero</legend>
+          <input type="radio" id="masculino" name="genero"
+                 value="masculino">
+          <label for="masculino">Masculino</label>
+
+          <input type="radio" id="femenino" name="genero"
+                 value="femenino">
+          <label for="femenino">Femenino</label>
+
+          <input type="radio" id="otro-genero" name="genero"
+                 value="otro">
+          <label for="otro-genero">Otro</label>
+
+          <input type="radio" id="no-dice" name="genero"
+                 value="prefiero-no-decir" checked>
+          <label for="no-dice">Prefiero no decir</label>
+        </fieldset>
+      </fieldset>
+
+      <!-- ===================================================== -->
+      <!-- GRUPO 2: datos de la cuenta                            -->
+      <!-- ===================================================== -->
+      <fieldset>
+        <legend>2. Tu cuenta</legend>
+
+        <!-- INPUT TYPE="PASSWORD": contrasena -->
+        <p>
+          <label for="clave">Contrasena * (minimo 8 caracteres)</label><br>
+          <input type="password" id="clave" name="clave" required
+                 minlength="8" maxlength="30"
+                 title="Minimo 8 caracteres"
+                 placeholder="Minimo 8 caracteres">
+        </p>
+
+        <p>
+          <label for="clave2">Confirmar contrasena *</label><br>
+          <input type="password" id="clave2" name="clave2" required
+                 minlength="8" maxlength="30"
+                 placeholder="Repite tu contrasena">
+        </p>
+
+        <!-- SELECT: ciudad -->
+        <p>
+          <label for="ciudad">Ciudad *</label><br>
+          <select id="ciudad" name="ciudad" required>
+            <option value="">-- Elige tu ciudad --</option>
+            <option value="cali">Cali</option>
+            <option value="bogota">Bogota</option>
+            <option value="medellin">Medellin</option>
+            <option value="barranquilla">Barranquilla</option>
+            <option value="cartagena">Cartagena</option>
+            <option value="bucaramanga">Bucaramanga</option>
+            <option value="pereira">Pereira</option>
+            <option value="manizales">Manizales</option>
+            <option value="otra">Otra ciudad</option>
+          </select>
+        </p>
+      </fieldset>
+
+      <!-- ===================================================== -->
+      <!-- GRUPO 3: preferencias                                  -->
+      <!-- ===================================================== -->
+      <fieldset>
+        <legend>3. Tus preferencias</legend>
+
+        <!-- SELECT con optgroup: marca favorita -->
+        <p>
+          <label for="marca">Marca favorita</label><br>
+          <select id="marca" name="marca">
+            <option value="">-- Opcional --</option>
+            <optgroup label="Mas vendidas">
+              <option value="nike">Nike</option>
+              <option value="adidas">Adidas</option>
+              <option value="new-balance">New Balance</option>
+            </optgroup>
+            <optgroup label="Tambien disponibles">
+              <option value="puma">Puma</option>
+              <option value="reebok">Reebok</option>
+            </optgroup>
+          </select>
+        </p>
+
+        <!-- DATALIST: talla habitual -->
+        <p>
+          <label for="talla">Tu talla habitual</label><br>
+          <input type="text" id="talla" name="talla"
+                 list="tallas-registro" placeholder="Ej: 42">
+          <datalist id="tallas-registro">
+            <option value="36"></option>
+            <option value="37"></option>
+            <option value="38"></option>
+            <option value="39"></option>
+            <option value="40"></option>
+            <option value="41"></option>
+            <option value="42"></option>
+            <option value="43"></option>
+            <option value="44"></option>
+            <option value="45"></option>
+          </datalist>
+        </p>
+
+        <!-- INPUT TYPE="SEARCH": buscar producto favorito -->
+        <p>
+          <label for="buscar">Que zapatilla buscas? (nombre o estilo)</label><br>
+          <input type="search" id="buscar" name="buscar"
+                 maxlength="80"
+                 placeholder="Ej: Air Force 1, running, casual...">
+        </p>
+
+        <!-- CHECKBOX multiple: intereses -->
+        <p>Que te interesa? (puedes marcar varias)</p>
+        <p>
+          <input type="checkbox" id="interes-ofertas" name="interes"
+                 value="ofertas">
+          <label for="interes-ofertas">Ofertas y descuentos</label><br>
+
+          <input type="checkbox" id="interes-nuevos" name="interes"
+                 value="nuevos">
+          <label for="interes-nuevos">Nuevos lanzamientos</label><br>
+
+          <input type="checkbox" id="interes-mayorista" name="interes"
+                 value="mayorista">
+          <label for="interes-mayorista">Precios al por mayor</label><br>
+
+          <input type="checkbox" id="interes-eventos" name="interes"
+                 value="eventos">
+          <label for="interes-eventos">Eventos y promociones</label>
+        </p>
+
+        <!-- textarea: comentario opcional -->
+        <p>
+          <label for="comentario">Algo mas que quieras contarnos?</label><br>
+          <textarea id="comentario" name="comentario"
+                    rows="3" cols="45" maxlength="200"
+                    placeholder="Opcional..."></textarea>
+        </p>
+      </fieldset>
+
+      <!-- checkbox required: terminos -->
+      <p>
+        <input type="checkbox" id="acepto" name="acepto"
+               value="si" required>
+        <label for="acepto">Acepto los terminos y condiciones y la
+          politica de tratamiento de datos personales *</label>
+      </p>
+
+      <p>
+        <input type="checkbox" id="mayor" name="mayor"
+               value="si" required>
+        <label for="mayor">Confirmo que soy mayor de 14 anos *</label>
+      </p>
+
+      <!-- Botones -->
+      <p>
+        <button type="submit">Crear mi cuenta</button>
+        <button type="reset">Limpiar formulario</button>
+      </p>
+    </form>
+  </main>
+
+  <!-- ======================= PIE DE PAGINA ======================= -->
+  <footer>
+    <p><a href="index.html">Volver al inicio</a></p>
+    <p><small>&copy; 2026 TENNISCO. Todos los derechos reservados.</small></p>
+    <p><small>Proyecto academico de Fundamentos Web - UNIAJC.</small></p>
+  </footer>
+
+</body>
+</html>

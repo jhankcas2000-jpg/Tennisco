@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<!--
+  ================================================================
+  ARCHIVO  : contacto.html - formulario de contacto
+  PROYECTO : TENNISCO - Fundamentos Web - UNIAJC
+  TEMAS    : form (action, method="get"), fieldset, legend, label,
+             input (text, email, tel), select, textarea, radio,
+             checkbox, button, validacion HTML5 (required, minlength,
+             maxlength, pattern, title).
+  NOTA     : solo HTML. Los datos se envian a gracias.html con GET.
+  ================================================================
+-->
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Escribele a TENNISCO. Formulario de contacto.">
+  <title>Contacto | TENNISCO</title>
+  <link rel="icon" href="img/logo.png" type="image/png">
+</head>
+
+<body>
+
+  <!-- ======================= ENCABEZADO ======================= -->
+  <header>
+    <a href="index.html">
+      <img src="img/logo.png" alt="TENNISCO - Ir al inicio"
+           width="100" height="100">
+    </a>
+    <h1>Contacto</h1>
+
+    <nav>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="nike.html">Nike</a></li>
+        <li><a href="adidas.html">Adidas</a></li>
+        <li><a href="new-balance.html">New Balance</a></li>
+        <li><a href="puma.html">Puma</a></li>
+        <li><a href="reebok.html">Reebok</a></li>
+        <li><a href="quienes-somos.html">Quienes somos</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="pedido.html">Hacer pedido</a></li>
+        <li><a href="registro.html">Registro</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ==================== CONTENIDO PRINCIPAL ==================== -->
+  <main>
+    <h2>Escribenos</h2>
+    <p>Tienes una pregunta sobre nuestros productos? Quieres saber
+       tallas o disponibilidad? Escribenos y te responderemos por
+       WhatsApp o correo en menos de 24 horas.</p>
+    <p>Los campos marcados con * son obligatorios.</p>
+
+    <!-- action: pagina que recibe los datos                         -->
+    <!-- method="get": los datos viajan en la URL (para ver el envio)-->
+    <form action="gracias.html" method="get">
+
+      <!-- ===== Grupo 1: datos del cliente ===== -->
+      <fieldset>
+        <legend>Tus datos</legend>
+
+        <p>
+          <label for="nombre">Nombre completo *</label><br>
+          <input type="text" id="nombre" name="nombre" required
+                 minlength="3" maxlength="60" autocomplete="name"
+                 placeholder="Ej: Juan Perez">
+        </p>
+
+        <p>
+          <label for="correo">Correo electronico *</label><br>
+          <input type="email" id="correo" name="correo" required
+                 autocomplete="email" placeholder="nombre@correo.com">
+        </p>
+
+        <!-- pattern: 10 digitos que empiezan por 3 (celular Colombia) -->
+        <p>
+          <label for="celular">Celular *</label><br>
+          <input type="tel" id="celular" name="celular" required
+                 pattern="3[0-9]{9}"
+                 title="10 digitos que empiecen por 3. Ej: 3001234567"
+                 autocomplete="tel" placeholder="3001234567">
+        </p>
+
+        <p>
+          <label for="ciudad">Ciudad *</label><br>
+          <input type="text" id="ciudad" name="ciudad" required
+                 placeholder="Ej: Cali">
+        </p>
+      </fieldset>
+
+      <!-- ===== Grupo 2: el mensaje ===== -->
+      <fieldset>
+        <legend>Tu mensaje</legend>
+
+        <!-- select required: obliga a elegir una opcion con value -->
+        <p>
+          <label for="asunto">Asunto *</label><br>
+          <select id="asunto" name="asunto" required>
+            <option value="">-- Elige un asunto --</option>
+            <option value="disponibilidad">Disponibilidad de un modelo</option>
+            <option value="tallas">Consulta de tallas</option>
+            <option value="precios">Precios al por mayor</option>
+            <option value="envio">Estado de un envio</option>
+            <option value="cambio">Cambio o devolucion</option>
+            <option value="otro">Otro tema</option>
+          </select>
+        </p>
+
+        <!-- textarea: texto de varias lineas, con minimo y maximo -->
+        <p>
+          <label for="mensaje">Mensaje * (entre 10 y 500 caracteres)</label><br>
+          <textarea id="mensaje" name="mensaje" rows="5" cols="45" required
+                    minlength="10" maxlength="500"
+                    placeholder="Escribe aqui tu mensaje..."></textarea>
+        </p>
+
+        <!-- radio: una sola opcion. checked = opcion por defecto -->
+        <p>Como prefieres que te respondamos?</p>
+        <p>
+          <input type="radio" id="resp-whatsapp" name="respuesta"
+                 value="whatsapp" checked>
+          <label for="resp-whatsapp">Por WhatsApp</label>
+
+          <input type="radio" id="resp-correo" name="respuesta"
+                 value="correo">
+          <label for="resp-correo">Por correo</label>
+        </p>
+      </fieldset>
+
+      <!-- checkbox required: obliga a aceptar -->
+      <p>
+        <input type="checkbox" id="acepto" name="acepto"
+               value="si" required>
+        <label for="acepto">Autorizo el tratamiento de
+          mis datos personales *</label>
+      </p>
+
+      <!-- checkbox opcional -->
+      <p>
+        <input type="checkbox" id="ofertas" name="ofertas" value="si">
+        <label for="ofertas">Quiero recibir ofertas y novedades
+          por WhatsApp</label>
+      </p>
+
+      <!-- Botones: submit envia, reset limpia el formulario -->
+      <p>
+        <button type="submit">Enviar mensaje</button>
+        <button type="reset">Borrar</button>
+      </p>
+    </form>
+  </main>
+
+  <!-- ======================= PIE DE PAGINA ======================= -->
+  <footer>
+    <p><a href="index.html">Volver al inicio</a></p>
+    <p><small>&copy; 2026 TENNISCO. Todos los derechos reservados.</small></p>
+    <p><small>Proyecto academico de Fundamentos Web - UNIAJC.</small></p>
+  </footer>
+
+</body>
+</html>

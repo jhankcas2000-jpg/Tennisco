@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<!--
+  ==================================================================
+  PROYECTO : TENNISCO (tienda de zapatillas)
+  CURSO    : Fundamentos Web - UNIAJC
+  ALUMNO   : (Escribe aqui tu nombre completo)
+  ARCHIVO  : index.html (pagina principal)
+  ENLACE   : http://www.tennisco.co
+  ==================================================================
+-->
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+        content="TENNISCO: tienda de zapatillas en Cali. Nike, Adidas,
+                 Puma, New Balance, Reebok y mas marcas al mejor precio.">
+  <meta name="author" content="Escribe aqui tu nombre">
+  <title>TENNISCO | Zapatillas originales en Cali</title>
+  <link rel="icon" href="img/logo.png" type="image/png">
+</head>
+
+<body>
+
+  <!-- Enlace de la pagina web -->
+  <a href="http://www.tennisco.co">http://www.tennisco.co</a>
+
+  <!-- ===== ENCABEZADO ===== -->
+  <header>
+    <img src="img/logo.png" alt="Logo de TENNISCO"
+         width="100" height="100">
+    <h1>TENNISCO</h1>
+    <p><em>Zapatillas originales al mejor precio en Cali.</em></p>
+
+    <!-- Menu de navegacion -->
+    <nav>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="nike.html">Nike</a></li>
+        <li><a href="adidas.html">Adidas</a></li>
+        <li><a href="new-balance.html">New Balance</a></li>
+        <li><a href="puma.html">Puma</a></li>
+        <li><a href="reebok.html">Reebok</a></li>
+        <li><a href="quienes-somos.html">Quienes somos</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="pedido.html">Hacer pedido</a></li>
+        <li><a href="registro.html">Registro</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ===== CONTENIDO PRINCIPAL ===== -->
+  <main>
+
+    <!-- Seccion de bienvenida -->
+    <section>
+      <h2>Bienvenidos a TENNISCO</h2>
+
+      <figure>
+        <img src="img/bienvenida.jpg"
+             alt="Vitrina con zapatillas de diferentes marcas"
+             width="400" height="600">
+        <figcaption>Las mejores zapatillas originales en Cali.</figcaption>
+      </figure>
+
+      <p>Somos una tienda de zapatillas ubicada en
+      <strong>Santiago de Cali, Colombia</strong>. Ofrecemos calzado
+      original de las mejores marcas del mundo.</p>
+
+      <h3>Por que comprar en TENNISCO?</h3>
+      <ul>
+        <li><strong>100% originales</strong>: solo vendemos zapatillas autenticas.</li>
+        <li>Precios competitivos para minoristas y mayoristas.</li>
+        <li>Envios a toda Colombia con pago contra entrega.</li>
+        <li>Atencion directa por WhatsApp todos los dias.</li>
+        <li>Garantia en todos nuestros productos.</li>
+      </ul>
+    </section>
+
+    <!-- ===== NUESTRAS MARCAS ===== -->
+    <!-- Cada imagen funciona como ENLACE: la imagen va dentro del <a> -->
+    <section>
+      <h2>Nuestras marcas</h2>
+
+      <article>
+        <h3>Nike</h3>
+        <a href="nike.html">
+          <img src="img/nike.jpg" alt="Ver productos Nike"
+               width="300" height="200">
+        </a>
+        <p>Air Max, Air Force 1, Dunk y muchos mas modelos.</p>
+        <p><a href="nike.html">Ver productos Nike</a></p>
+      </article>
+
+      <article>
+        <h3>Adidas</h3>
+        <a href="adidas.html">
+          <img src="img/adidas.jpg" alt="Ver productos Adidas"
+               width="300" height="200">
+        </a>
+        <p>Samba, Gazelle, Superstar y las lineas Originals.</p>
+        <p><a href="adidas.html">Ver productos Adidas</a></p>
+      </article>
+
+      <article>
+        <h3>New Balance</h3>
+        <a href="new-balance.html">
+          <img src="img/new-balance.jpg" alt="Ver productos New Balance"
+               width="300" height="200">
+        </a>
+        <p>Los modelos 550, 574 y 2002R son los <mark>mas pedidos</mark>.</p>
+        <p><a href="new-balance.html">Ver productos New Balance</a></p>
+      </article>
+
+      <article>
+        <h3>Puma</h3>
+        <a href="puma.html">
+          <img src="img/puma.jpg" alt="Ver productos Puma"
+               width="300" height="200">
+        </a>
+        <p>Suede, RS-X y Cali para todos los gustos.</p>
+        <p><a href="puma.html">Ver productos Puma</a></p>
+      </article>
+
+      <article>
+        <h3>Reebok</h3>
+        <a href="reebok.html">
+          <img src="img/reebok.jpg" alt="Ver productos Reebok"
+               width="300" height="200">
+        </a>
+        <p>Classic Leather, Club C y mas modelos urbanos.</p>
+        <p><a href="reebok.html">Ver productos Reebok</a></p>
+      </article>
+    </section>
+
+    <!-- ===== VIDEO ===== -->
+    <section>
+      <h2>Conoce TENNISCO</h2>
+
+      <p>Mira como llegan tus zapatillas originales:</p>
+
+      <iframe width="560" height="315"
+              src="https://www.youtube.com/embed/2lTP2OmThfI"
+              title="Video de zapatillas TENNISCO"
+              allow="accelerometer; autoplay; clipboard-write;
+                     encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+              loading="lazy"></iframe>
+    </section>
+
+    <!-- ===== GALERIA ===== -->
+    <section>
+      <h2>Galeria</h2>
+
+      <figure>
+        <img src="img/galeria-1.jpg"
+             alt="Nuevas llegadas Nike"
+             width="300" height="200" loading="lazy">
+        <figcaption>Nuevas llegadas Nike.</figcaption>
+      </figure>
+
+      <figure>
+        <img src="img/galeria-2.jpg"
+             alt="Clientes satisfechos con sus zapatillas"
+             width="400" height="600" loading="lazy">
+        <figcaption>Clientes satisfechos.</figcaption>
+      </figure>
+
+      <figure>
+        <img src="img/galeria-3.jpg"
+             alt="Variedad de marcas disponibles"
+             width="400" height="600" loading="lazy">
+        <figcaption>Variedad de marcas disponibles.</figcaption>
+      </figure>
+    </section>
+
+  </main>
+
+  <!-- ===== ASIDE ===== -->
+  <aside>
+    <h2>Informacion para mayoristas</h2>
+    <p>Si deseas comprar <strong>6 pares o mas</strong>, tenemos
+       precios especiales. Escribenos por WhatsApp.</p>
+
+    <h3>Metodos de pago</h3>
+    <ol type="A">
+      <li>Nequi</li>
+      <li>Daviplata</li>
+      <li>Bancolombia (transferencia)</li>
+      <li>Efectivo (contra entrega en Cali)</li>
+      <li>Efecty</li>
+      <li>Tarjeta de credito o debito</li>
+    </ol>
+  </aside>
+
+  <!-- ===== PIE DE PAGINA ===== -->
+  <footer>
+    <h2>Contactanos</h2>
+
+    <address>
+      <strong>TENNISCO</strong><br>
+      NIT: 1005873632-1<br>
+      Santiago de Cali, Valle del Cauca, Colombia<br>
+      Telefono: <a href="tel:+573154123468">315 412 3468</a><br>
+      WhatsApp: <a href="https://wa.me/573154123468"
+                   target="_blank" rel="noopener noreferrer">315 412 3468</a><br>
+      Correo: <a href="mailto:tennisco@gmail.com">tennisco@gmail.com</a>
+    </address>
+
+    <p>
+      <a href="https://chat.whatsapp.com/KHpG1vBif6wDxOlRCeKOVL"
+         target="_blank" rel="noopener noreferrer">
+        Unete a nuestra comunidad de WhatsApp
+      </a>
+    </p>
+
+    <p>Siguenos en:
+      <a href="https://www.instagram.com/" target="_blank"
+         rel="noopener noreferrer">Instagram</a> |
+      <a href="https://www.facebook.com/" target="_blank"
+         rel="noopener noreferrer">Facebook</a> |
+      <a href="https://www.tiktok.com/" target="_blank"
+         rel="noopener noreferrer">TikTok</a>
+    </p>
+
+    <p><small>&copy; 2026 TENNISCO. Todos los derechos reservados.</small></p>
+    <p><small>Proyecto academico de Fundamentos Web - UNIAJC.</small></p>
+    <p><a href="#">Volver arriba</a></p>
+  </footer>
+
+</body>
+</html>
