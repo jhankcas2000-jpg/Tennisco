@@ -1,0 +1,476 @@
+/* =============================================================
+   PROYECTO : TENNISCO - Tienda de zapatillas
+   ARCHIVO  : css/estilos.css (hoja de estilos principal)
+   CURSO    : Fundamentos Web - UNIAJC
+   ============================================================= */
+
+/* ======================== RESET BASICO ======================== */
+/* Quita margenes y paddings por defecto del navegador */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ======================== CUERPO ======================== */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: #333333;
+  background-color: #f5f5f5;
+}
+
+/* ======================== HEADER ======================== */
+header {
+  background-color: #1a1a2e;
+  color: #ffffff;
+  padding: 20px;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 2em;
+  margin: 10px 0 5px;
+  color: #00e676;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+header p {
+  color: #cccccc;
+  font-size: 1em;
+}
+
+header > a {
+  color: #00e676;
+  text-decoration: none;
+  font-size: 0.85em;
+}
+
+header > a:hover {
+  text-decoration: underline;
+}
+
+/* ======================== NAVEGACION ======================== */
+nav {
+  background-color: #16213e;
+  padding: 10px 0;
+  margin-top: 15px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 5px;
+}
+
+nav ul li a {
+  color: #ffffff;
+  text-decoration: none;
+  padding: 8px 14px;
+  display: block;
+  border-radius: 4px;
+  font-size: 0.9em;
+  transition: background-color 0.3s;
+}
+
+nav ul li a:hover {
+  background-color: #00e676;
+  color: #1a1a2e;
+}
+
+/* ======================== MAIN ======================== */
+main {
+  max-width: 960px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* ======================== SECCIONES ======================== */
+section {
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #eeeeee;
+}
+
+section:last-child {
+  border-bottom: none;
+}
+
+h2 {
+  color: #1a1a2e;
+  font-size: 1.6em;
+  margin-bottom: 15px;
+  padding-bottom: 8px;
+  border-bottom: 3px solid #00e676;
+  display: inline-block;
+}
+
+h3 {
+  color: #16213e;
+  font-size: 1.2em;
+  margin: 15px 0 8px;
+}
+
+p {
+  margin-bottom: 10px;
+}
+
+/* ======================== IMAGENES ======================== */
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px;
+}
+
+figure {
+  margin: 15px 0;
+  text-align: center;
+}
+
+figcaption {
+  font-size: 0.85em;
+  color: #777777;
+  margin-top: 5px;
+  font-style: italic;
+}
+
+/* ======================== ARTICLES (marcas) ======================== */
+article {
+  background-color: #fafafa;
+  border: 1px solid #eeeeee;
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+article:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+article img {
+  border-radius: 6px;
+}
+
+article a {
+  color: #00897b;
+  font-weight: bold;
+}
+
+/* ======================== LISTAS ======================== */
+ul, ol {
+  margin: 10px 0 10px 25px;
+}
+
+li {
+  margin-bottom: 5px;
+}
+
+/* ======================== TABLAS ======================== */
+table {
+  width: 100%;
+  max-width: 500px;
+  border-collapse: collapse;
+  margin: 15px 0;
+}
+
+table th,
+table td {
+  border: 1px solid #cccccc;
+  padding: 10px 15px;
+  text-align: left;
+}
+
+table thead th {
+  background-color: #1a1a2e;
+  color: #ffffff;
+}
+
+table tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+table tbody tr:hover {
+  background-color: #e8f5e9;
+}
+
+/* ======================== IFRAME (video, mapa) ======================== */
+iframe {
+  max-width: 100%;
+  border: none;
+  border-radius: 8px;
+  display: block;
+  margin: 15px auto;
+}
+
+/* ======================== ASIDE ======================== */
+aside {
+  max-width: 960px;
+  margin: 0 auto 20px;
+  padding: 20px;
+  background-color: #e8f5e9;
+  border-left: 5px solid #00e676;
+  border-radius: 0 8px 8px 0;
+}
+
+aside h2 {
+  color: #1a1a2e;
+  border-bottom-color: #00897b;
+}
+
+/* ======================== FORMULARIOS ======================== */
+form {
+  max-width: 600px;
+}
+
+fieldset {
+  border: 2px solid #cccccc;
+  border-radius: 8px;
+  padding: 15px 20px;
+  margin-bottom: 20px;
+}
+
+legend {
+  font-weight: bold;
+  color: #1a1a2e;
+  padding: 0 8px;
+  font-size: 1.1em;
+}
+
+label {
+  font-weight: 600;
+  color: #333333;
+  font-size: 0.95em;
+}
+
+/* Campos de texto, email, tel, password, search, date, number */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="password"],
+input[type="search"],
+input[type="date"],
+input[type="number"] {
+  width: 100%;
+  max-width: 400px;
+  padding: 8px 12px;
+  border: 2px solid #cccccc;
+  border-radius: 6px;
+  font-size: 1em;
+  font-family: inherit;
+  transition: border-color 0.3s;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+input[type="password"]:focus,
+input[type="search"]:focus,
+input[type="date"]:focus,
+input[type="number"]:focus,
+textarea:focus,
+select:focus {
+  border-color: #00e676;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 230, 118, 0.3);
+}
+
+/* Campos invalidos despues de interaccion */
+input:invalid:not(:placeholder-shown),
+textarea:invalid:not(:placeholder-shown),
+select:invalid {
+  border-color: #e53935;
+}
+
+select {
+  width: 100%;
+  max-width: 420px;
+  padding: 8px 12px;
+  border: 2px solid #cccccc;
+  border-radius: 6px;
+  font-size: 1em;
+  font-family: inherit;
+  background-color: #ffffff;
+}
+
+textarea {
+  width: 100%;
+  max-width: 400px;
+  padding: 8px 12px;
+  border: 2px solid #cccccc;
+  border-radius: 6px;
+  font-size: 1em;
+  font-family: inherit;
+  resize: vertical;
+}
+
+/* Radio y checkbox: espacio */
+input[type="radio"],
+input[type="checkbox"] {
+  margin-right: 5px;
+  accent-color: #00e676;
+}
+
+/* ======================== BOTONES ======================== */
+button[type="submit"] {
+  background-color: #00e676;
+  color: #1a1a2e;
+  border: none;
+  padding: 10px 25px;
+  font-size: 1em;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+  background-color: #00c853;
+}
+
+button[type="reset"] {
+  background-color: #eeeeee;
+  color: #555555;
+  border: 1px solid #cccccc;
+  padding: 10px 25px;
+  font-size: 1em;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-left: 10px;
+  transition: background-color 0.3s;
+}
+
+button[type="reset"]:hover {
+  background-color: #dddddd;
+}
+
+/* ======================== MENSAJES DE ERROR JS ======================== */
+/* Estos <span> se llenan con JavaScript cuando hay un error */
+.error-msg {
+  color: #e53935;
+  font-size: 0.85em;
+  font-weight: 600;
+  display: block;
+  margin-top: 4px;
+}
+
+.exito-msg {
+  color: #2e7d32;
+  font-size: 0.85em;
+  font-weight: 600;
+  display: block;
+  margin-top: 4px;
+}
+
+/* ======================== LINKS ======================== */
+a {
+  color: #00897b;
+  transition: color 0.3s;
+}
+
+a:hover {
+  color: #00e676;
+}
+
+/* ======================== ADDRESS ======================== */
+address {
+  font-style: normal;
+  line-height: 1.8;
+  margin: 10px 0;
+}
+
+/* ======================== FOOTER ======================== */
+footer {
+  background-color: #1a1a2e;
+  color: #cccccc;
+  text-align: center;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+footer h2 {
+  color: #00e676;
+  border-bottom-color: #00e676;
+}
+
+footer a {
+  color: #00e676;
+}
+
+footer a:hover {
+  color: #ffffff;
+}
+
+footer small {
+  font-size: 0.8em;
+}
+
+/* ======================== UTILIDADES ======================== */
+mark {
+  background-color: #e8f5e9;
+  padding: 2px 4px;
+  border-radius: 3px;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #eeeeee;
+  margin: 20px 0;
+}
+
+code {
+  background-color: #f5f5f5;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-size: 0.9em;
+}
+
+/* ======================== RESPONSIVE ======================== */
+/* Pantallas pequenas (celulares) */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 1.5em;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav ul li a {
+    padding: 6px 10px;
+    font-size: 0.85em;
+  }
+
+  main {
+    margin: 10px;
+    padding: 15px;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="password"],
+  input[type="search"],
+  input[type="date"],
+  input[type="number"],
+  select,
+  textarea {
+    max-width: 100%;
+  }
+
+  table {
+    font-size: 0.9em;
+  }
+
+  iframe {
+    width: 100%;
+    height: 200px;
+  }
+}
