@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<!--
+  ================================================================
+  ARCHIVO  : contacto.html - formulario de contacto
+  PROYECTO : TENNISCO - Fundamentos Web - UNIAJC
+  TEMAS    : form, fieldset, legend, label, input (text, email, tel),
+             select, textarea, radio, checkbox, button,
+             validacion HTML5 + validacion JavaScript, CSS.
+  ================================================================
+-->
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Escribele a TENNISCO. Formulario de contacto.">
+  <title>Contacto | TENNISCO</title>
+  <link rel="icon" href="img/logo.png" type="image/png">
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+
+<body>
+
+  <!-- ======================= ENCABEZADO ======================= -->
+  <header>
+    <a href="index.html">
+      <img src="img/logo.png" alt="TENNISCO - Ir al inicio"
+           width="100" height="100">
+    </a>
+    <h1>TENNISCO</h1>
+    <p><em>Zapatillas importadas 1.1 al mejor precio en Cali.</em></p>
+
+    <nav>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="nike.html">Nike</a></li>
+        <li><a href="adidas.html">Adidas</a></li>
+        <li><a href="new-balance.html">New Balance</a></li>
+        <li><a href="puma.html">Puma</a></li>
+        <li><a href="reebok.html">Reebok</a></li>
+        <li><a href="quienes-somos.html">Quienes somos</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="pedido.html">Hacer pedido</a></li>
+        <li><a href="registro.html">Registro</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ==================== CONTENIDO PRINCIPAL ==================== -->
+  <main>
+    <h2>Escribenos</h2>
+    <p>Tienes una pregunta sobre nuestros productos? Quieres saber
+       tallas o disponibilidad? Escribenos y te responderemos por
+       WhatsApp o correo en menos de 24 horas.</p>
+    <p>Los campos marcados con * son obligatorios.</p>
+
+    <!-- novalidate: desactiva burbujas del navegador para ver los
+         mensajes en espanol de JavaScript.
+         onsubmit: al enviar, ejecuta validarFormContacto() del js/ -->
+    <form action="gracias.html" method="get"
+          onsubmit="return validarFormContacto()" novalidate>
+
+      <!-- ===== Grupo 1: datos del cliente ===== -->
+      <fieldset>
+        <legend>Tus datos</legend>
+
+        <p>
+          <label for="nombre">Nombre completo *</label><br>
+          <input type="text" id="nombre" name="nombre" required
+                 minlength="3" maxlength="60" autocomplete="name"
+                 placeholder="Ej: Juan Perez"
+                 onblur="validarTexto('nombre','error-nombre',3,60,'El nombre')">
+          <span id="error-nombre"></span>
+        </p>
+
+        <p>
+          <label for="correo">Correo electronico *</label><br>
+          <input type="email" id="correo" name="correo" required
+                 autocomplete="email" placeholder="nombre@correo.com"
+                 onblur="validarCorreo('correo','error-correo')">
+          <span id="error-correo"></span>
+        </p>
+
+        <p>
+          <label for="celular">Celular *</label><br>
+          <input type="tel" id="celular" name="celular" required
+                 pattern="3[0-9]{9}"
+                 title="10 digitos que empiecen por 3. Ej: 3001234567"
+                 autocomplete="tel" placeholder="3001234567"
+                 onblur="validarCelular('celular','error-celular')">
+          <span id="error-celular"></span>
+        </p>
+
+        <p>
+          <label for="ciudad">Ciudad *</label><br>
+          <input type="text" id="ciudad" name="ciudad" required
+                 minlength="2" maxlength="40"
+                 placeholder="Ej: Cali"
+                 onblur="validarTexto('ciudad','error-ciudad',2,40,'La ciudad')">
+          <span id="error-ciudad"></span>
+        </p>
+      </fieldset>
+
+      <!-- ===== Grupo 2: el mensaje ===== -->
+      <fieldset>
+        <legend>Tu mensaje</legend>
+
+        <p>
+          <label for="asunto">Asunto *</label><br>
+          <select id="asunto" name="asunto" required
+                  onchange="validarSelect('asunto','error-asunto','un asunto')">
+            <option value="">-- Elige un asunto --</option>
+            <option value="disponibilidad">Disponibilidad de un modelo</option>
+            <option value="tallas">Consulta de tallas</option>
+            <option value="precios">Precios al por mayor</option>
+            <option value="envio">Estado de un envio</option>
+            <option value="cambio">Cambio o devolucion</option>
+            <option value="otro">Otro tema</option>
+          </select>
+          <span id="error-asunto"></span>
+        </p>
+
+        <p>
+          <label for="mensaje">Mensaje * (entre 10 y 500 caracteres)</label><br>
+          <textarea id="mensaje" name="mensaje" rows="5" cols="45" required
+                    minlength="10" maxlength="500"
+                    placeholder="Escribe aqui tu mensaje..."
+                    onblur="validarTextarea('mensaje','error-mensaje',10,500,'El mensaje')"></textarea>
+          <span id="error-mensaje"></span>
+        </p>
+
+        <p>Como prefieres que te respondamos?</p>
+        <p>
+          <input type="radio" id="resp-whatsapp" name="respuesta"
+                 value="whatsapp" checked>
+          <label for="resp-whatsapp">Por WhatsApp</label>
+
+          <input type="radio" id="resp-correo" name="respuesta"
+                 value="correo">
+          <label for="resp-correo">Por correo</label>
+        </p>
+      </fieldset>
+
+      <p>
+        <input type="checkbox" id="acepto" name="acepto"
+               value="si" required>
+        <label for="acepto">Autorizo el tratamiento de
+          mis datos personales *</label>
+        <span id="error-acepto"></span>
+      </p>
+
+      <p>
+        <input type="checkbox" id="ofertas" name="ofertas" value="si">
+        <label for="ofertas">Quiero recibir ofertas y novedades
+          por WhatsApp</label>
+      </p>
+
+      <p>
+        <button type="submit">Enviar mensaje</button>
+        <button type="reset">Borrar</button>
+      </p>
+    </form>
+  </main>
+
+  <!-- ======================= PIE DE PAGINA ======================= -->
+  <footer>
+    <p><a href="index.html">Volver al inicio</a></p>
+    <p><small>&copy; 2026 TENNISCO. Todos los derechos reservados.</small></p>
+    <p><small>Proyecto academico de Fundamentos Web - UNIAJC.</small></p>
+  </footer>
+
+  <!-- Carga del JavaScript de validacion -->
+  <script src="js/validar.js"></script>
+</body>
+</html>
